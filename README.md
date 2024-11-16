@@ -57,7 +57,7 @@ main-service/
 
   1. Clone o repositório:
      ```bash
-     git clone <URL_DO_REPOSITORIO>
+     git clone <https://github.com/kcrismartins/fiap-postech-Sub4-main-service.git>
      cd main-service
      
  2. Instale as dependências:
