@@ -72,7 +72,7 @@ main-service/
     uvicorn src.main:app --reload
 
 
-### Usando Docker
+###  Usando Docker 🐳
 
 1. Configure o .env com as variáveis necessárias (caso aplicável).
 2. Inicie o ambiente com Docker Compose:
