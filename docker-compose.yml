@@ -1,29 +1,29 @@
 version: "3.8"
 
 services:
-  vehicle-sales-service:
+  main-service:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: vehicle-sales-service
+    container_name: main-service
     ports:
-      - "8001:8000" # Porta mapeada (localhost:8001 -> container:8000)
+      - "8002:8000" # Porta mapeada (localhost:8002 -> container:8000)
     environment:
-      DATABASE_URL: "postgresql://admin:password123@db:5432/vehicle_sales_db"
+      DATABASE_URL: "postgresql://admin:password123@db:5432/main_service_db"
     depends_on:
       - db
 
   db:
     image: postgres:13
-    container_name: vehicle-sales-db
+    container_name: main-service-db
     environment:
       POSTGRES_USER: admin
       POSTGRES_PASSWORD: password123
-      POSTGRES_DB: vehicle_sales_db
+      POSTGRES_DB: main_service_db
     ports:
-      - "5433:5432" # Porta do PostgreSQL para o serviço
+      - "5434:5432" # Porta do PostgreSQL para o serviço
     volumes:
-      - vehicle-sales-db-data:/var/lib/postgresql/data
+      - main-service-db-data:/var/lib/postgresql/data
 
 volumes:
-  vehicle-sales-db-data:
+  main-service-db-data:
